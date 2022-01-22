@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  SafeAreaView,
   Image,
   StyleSheet,
   FlatList,
@@ -41,7 +40,7 @@ const slides = [
 
 const Slide = ({item}) => {
   return (
-    <View style={{alignItems: 'center'}}>
+    <View style={{alignItems: 'center',marginTop:20}}>
       <Image
         source={item?.image}
         style={{height: '75%', width, resizeMode: 'contain', marginTop:20,borderRadius:5}}
@@ -77,6 +76,7 @@ const OnboardingScreen = ({navigation}) => {
     const offset = lastSlideIndex * width;
     ref?.current.scrollToOffset({offset});
     setCurrentSlideIndex(lastSlideIndex);
+    navigation.replace('Home');
   };
 
   const Footer = () => {
@@ -115,7 +115,7 @@ const OnboardingScreen = ({navigation}) => {
             <View style={{height: 50}}>
               <TouchableOpacity
                 style={styles.btn}
-                onPress={() => navigation.replace('HomeScreen')}>
+                onPress={() => navigation.replace('Home')}>
                 <Text style={{fontWeight: 'bold', fontSize: 15, color: colors.white,}}>
                   GET STARTED
                 </Text>
@@ -165,8 +165,7 @@ const OnboardingScreen = ({navigation}) => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: colors.white}}>
-      <StatusBar backgroundColor={colors.primary} />
+  <View>
       <FlatList
         ref={ref}
         onMomentumScrollEnd={updateCurrentSlideIndex}
@@ -178,7 +177,7 @@ const OnboardingScreen = ({navigation}) => {
         renderItem={({item}) => <Slide item={item} />}
       />
       <Footer />
-    </SafeAreaView>
+      </View>
   );
 };
 
