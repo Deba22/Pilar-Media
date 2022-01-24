@@ -1,25 +1,42 @@
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { useFonts } from 'expo-font';
 
 import colors from '../config/colors';
 import Block from '../components/Block';
 import { LinearGradient } from 'expo-linear-gradient';
 import AppText from '../components/AppText';
 
-export default function HomeScreen() {
+export default function HomeScreen({navigation}) {
+  const [loaded] = useFonts({
+    HalantRegular: require('../assets/fonts/Halant-Regular.ttf'),
+    HalantSemiBold: require('../assets/fonts/Halant-SemiBold.ttf'),
+  });
+  
+  if (!loaded) {
+    return null;
+  }
+
   return (
     <ScrollView>
     <View style={styles.container}>
-      <Text style={styles.quote}>I can do all things through Christ I can do all things through Christ</Text>
+      <Text style={styles.quote}>
+        <Text style={styles.startQuote}>
+        I can do all
+        </Text>
+        <Text>{" "}</Text>
+        <Text style={styles.endQuote}>
+        things through Christ
+        </Text>
+      </Text>
       <View style={styles.blocksLayout}>
-        <Block BlockImageSrc={require('../assets/pilar-media-bg-image.png')} BlockHeader={'Pilar Media'} BlockDesc={'Lorem Ipsum is simply dummy text of the printing industry.Lorem Ipsum is simply dummy text'} arrowInnerColor={{backgroundColor:'#E25252'}}/>
-        <Block BlockImageSrc={require('../assets/society-of-pilar-bg-image.png')} BlockHeader={'Society of Pilar'} BlockDesc={'Lorem Ipsum is simply dummy text of the printing industry.Lorem Ipsum is simply dummy text'} arrowInnerColor={{backgroundColor:'#5579D6'}}/>
-        <Block BlockImageSrc={require('../assets/pilar-prays-bg-image.png')} BlockHeader={'Pilar Prays'} BlockDesc={'Lorem Ipsum is simply dummy text of the printing industry.Lorem Ipsum is simply dummy text'} arrowInnerColor={{backgroundColor:'#9B3AB2'}}/>
-        <Block BlockImageSrc={require('../assets/padre-agnelo-bg-image.png')} BlockHeader={'Padre Agnelo'} BlockDesc={'Lorem Ipsum is simply dummy text of the printing industry.Lorem Ipsum is simply dummy text'} arrowInnerColor={{backgroundColor:'#949660'}}/>
-      
+        <Block BlockImageSrc={require('../assets/pilar-media-bg-image.png')} BlockHeader={'Pilar Media'} BlockDesc={'Lorem Ipsum is simply dummy text of the printing industry.Lorem Ipsum is simply dummy text'} arrowInnerColor={{backgroundColor:colors.block1light}}  onPress={() => navigation.navigate('PilarMediaListing')}/>
+        <Block BlockImageSrc={require('../assets/society-of-pilar-bg-image.png')} BlockHeader={'Society of Pilar'} BlockDesc={'Lorem Ipsum is simply dummy text of the printing industry.Lorem Ipsum is simply dummy text'} arrowInnerColor={{backgroundColor:colors.block2light}} onPress={() => navigation.navigate('SocietyOfPilarListing')}/>
+        <Block BlockImageSrc={require('../assets/pilar-prays-bg-image.png')} BlockHeader={'Pilar Prays'} BlockDesc={'Lorem Ipsum is simply dummy text of the printing industry.Lorem Ipsum is simply dummy text'} arrowInnerColor={{backgroundColor:colors.block3light}} onPress={() => navigation.navigate('PilarPraysListing')}/>
+        <Block BlockImageSrc={require('../assets/padre-agnelo-bg-image.png')} BlockHeader={'Padre Agnelo'} BlockDesc={'Lorem Ipsum is simply dummy text of the printing industry.Lorem Ipsum is simply dummy text'} arrowInnerColor={{backgroundColor:colors.block4light}} onPress={() => navigation.navigate('PadreAgneloListing')}/>
       </View>
      
-        <LinearGradient colors={['#2D3D75', '#8F96BB']}  start={{ x: 0, y: 0 }}
+        <LinearGradient colors={['#2D3D75', '#747A9A']}  start={{ x: 0, y: 0 }}
         end={{ x: 0.9, y: 0 }}>
         <View style={styles.verseOfTheDaylayout}>
         <View style={styles.verseInner}>
@@ -58,14 +75,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#8F96BBF5',
     paddingHorizontal:20
   },
+  endQuote:{
+    fontFamily:'HalantSemiBold',
+    lineHeight:30
+  },
   saintOfTheDay:{
     backgroundColor:'#8F96BBFF',
     paddingHorizontal:20
   },
+  startQuote:{
+    fontFamily:'HalantRegular'
+  },
   quote:{
     color: colors.primary,
-    fontSize: 22,
-    fontWeight: 'bold',
+    fontSize: 26,
   },
   verseOfTheDaylayout:{
     padding:10

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,ImageBackground,Image, Dimensions } from 'react-native';
+import { StyleSheet, View,ImageBackground,Image, Dimensions, TouchableHighlight,TouchableOpacity   } from 'react-native';
 import React from 'react';
 
 import colors from '../config/colors';
@@ -6,8 +6,9 @@ import AppText from './AppText';
 
 const {width, height} = Dimensions.get('window');
 
-export default function Block({BlockImageSrc, BlockHeader, BlockDesc,arrowInnerColor}) {
+export default function Block({BlockImageSrc, BlockHeader, BlockDesc,arrowInnerColor,onPress}) {
   return (
+    <TouchableOpacity   onPress={onPress} activeOpacity={0.8}>
     <ImageBackground style={styles.blockImage} source={BlockImageSrc} imageStyle={{ borderRadius: 10}}>
           <View style={styles.blockInner}>
             <AppText style={styles.blockHeader}>{BlockHeader}</AppText>
@@ -17,6 +18,7 @@ export default function Block({BlockImageSrc, BlockHeader, BlockDesc,arrowInnerC
             <Image style={styles.blockArrow} source={require('../assets/arrow.png')}></Image>
           </View>         
         </ImageBackground>
+        </TouchableOpacity  >
   );
 }
 
