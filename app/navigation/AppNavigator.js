@@ -9,6 +9,8 @@ import PadreAgneloListingScreen from '../screens/PadreAgneloListingScreen';
 import OnboardingScreen from '../screens/OnboardingScreen';
 import DrawerNavigator from './DrawerNavigator';
 import PilarDivyaSancharScreen from '../screens/PilarDivyaSancharScreen';
+import VauraddeanchoIxttScreen from '../screens/VauraddeanchoIxttScreen';
+import FrAgnelCallScreen from '../screens/FrAgnelCallScreen';
 
 
 const Stack = createStackNavigator();
@@ -24,6 +26,8 @@ const AppNavigator = ({navigation}) => {
       <Stack.Screen name="PadreAgneloListing" component={PadreAgneloListingScreen} options={{ title: 'Padre Agnelo'}}/>
 
       <Stack.Screen name="PilarDivyaSanchar" component={PilarDivyaSancharScreen} options={{ title: 'Pilar Divya Sanchar'}}/>
+      <Stack.Screen name="VauraddeanchoIxtt" component={VauraddeanchoIxttScreen} options={{ title: 'Vauraddeancho Ixtt'}}/>
+      <Stack.Screen name="FrAgnelCall" component={FrAgnelCallScreen} options={{ title: 'Fr. Agnels Call'}}/>
     </Stack.Navigator>
   );
 }

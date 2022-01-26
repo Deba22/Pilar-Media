@@ -12,11 +12,13 @@ const menuItems = [
     },
     {
         title: "Vauraddeancho Ixtt",
-        description:"Lorem Ipsum is simply dummy text of the printing industry"
+        description:"Lorem Ipsum is simply dummy text of the printing industry",
+        targetScreen:routes.VAURADDEANCHOIXTT
     },
     {
         title: "Fr. Agnel's Call",
-        description:"Lorem Ipsum is simply dummy text of the printing industry"
+        description:"Lorem Ipsum is simply dummy text of the printing industry",
+        targetScreen:routes.FRAGNELCALL
     },
     {
         title: "Facebook, Twitter, Instagram",
