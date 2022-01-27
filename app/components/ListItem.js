@@ -49,6 +49,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection:'row',
     borderRadius:10,
+    marginHorizontal:15,
   },
   detailsContainer: {
     flex: 1,

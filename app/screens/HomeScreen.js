@@ -1,4 +1,4 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View,TouchableWithoutFeedback } from 'react-native';
 import React from 'react';
 import { useFonts } from 'expo-font';
 
@@ -26,7 +26,7 @@ export default function HomeScreen({navigation}) {
         </Text>
         <Text>{" "}</Text>
         <Text style={styles.endQuote}>
-        things through Christ
+        things through Christ. He is all that I have...
         </Text>
       </Text>
       <View style={styles.blocksLayout}>
@@ -44,7 +44,9 @@ export default function HomeScreen({navigation}) {
           <AppText style={styles.verseDesc}>I am the vine, you are the branches. Whoever remains in me and I in him will bear much fruit, because without me you can do nothing.</AppText>
         </View>
         <View style={styles.chapterInner}>
+        <TouchableWithoutFeedback onPress={() => navigation.navigate('DailyScripturesReflections')}>
           <AppText style={styles.chapter}>Jn 15:1-8</AppText>
+        </TouchableWithoutFeedback>
           <AppText style={styles.saintOfTheDay}>Saint of the day</AppText>
         </View>
         </View>
@@ -77,7 +79,7 @@ const styles = StyleSheet.create({
   },
   endQuote:{
     fontFamily:'HalantSemiBold',
-    lineHeight:30
+   
   },
   saintOfTheDay:{
     backgroundColor:'#8F96BBFF',
@@ -89,6 +91,7 @@ const styles = StyleSheet.create({
   quote:{
     color: colors.primary,
     fontSize: 26,
+    
   },
   verseOfTheDaylayout:{
     padding:10

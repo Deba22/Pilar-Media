@@ -48,7 +48,6 @@ export default function SocietyOfPilarListingScreen() {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        paddingHorizontal:15,
         paddingTop:20
     }
 })

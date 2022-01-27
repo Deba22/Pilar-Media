@@ -3,11 +3,13 @@ import { StyleSheet, FlatList, View } from 'react-native'
 
 import ListItem from '../components/ListItem';
 import colors from '../config/colors';
+import routes from '../navigation/routes';
 
 const menuItems = [
     {
       title: "Daily Scriptures and Reflections",
-      description:"Lorem Ipsum is simply dummy text of the printing industry"
+      description:"Lorem Ipsum is simply dummy text of the printing industry",
+      targetScreen:routes.DAILYSCRIPTURESREFLECTIONS
     },
     {
         title: "Ordo",
@@ -31,7 +33,7 @@ const menuItems = [
     },
   ];
         
-export default function PilarPraysListingScreen() {
+export default function PilarPraysListingScreen({navigation}) {
     return (
         <View style={styles.container}>
         <FlatList
@@ -45,7 +47,7 @@ export default function PilarPraysListingScreen() {
                   description={item.description}
                   listItemStyle={{backgroundColor:colors.block3}}
                   arrowStyle={{backgroundColor:colors.block3light}}
-                //   onPress={() => navigation.navigate(item.targetScreen)}
+                  onPress={() => navigation.navigate(item.targetScreen)}
                 />
               )}
         />            
@@ -56,7 +58,6 @@ export default function PilarPraysListingScreen() {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        paddingHorizontal:15,
         paddingTop :20
     }
 })

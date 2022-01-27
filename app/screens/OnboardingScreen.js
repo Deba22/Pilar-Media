@@ -40,7 +40,7 @@ const slides = [
 
 const Slide = ({item}) => {
   return (
-    <View style={{alignItems: 'center',marginTop:20}}>
+    <View style={{alignItems: 'center',marginTop:50}}>
       <Image
         source={item?.image}
         style={{height: '75%', width, resizeMode: 'contain', marginTop:20,borderRadius:5}}

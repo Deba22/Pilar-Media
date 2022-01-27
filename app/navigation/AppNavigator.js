@@ -11,6 +11,7 @@ import DrawerNavigator from './DrawerNavigator';
 import PilarDivyaSancharScreen from '../screens/PilarDivyaSancharScreen';
 import VauraddeanchoIxttScreen from '../screens/VauraddeanchoIxttScreen';
 import FrAgnelCallScreen from '../screens/FrAgnelCallScreen';
+import DailyScripturesReflectionsScreen from '../screens/DailyScripturesReflectionsScreen';
 
 
 const Stack = createStackNavigator();
@@ -28,6 +29,7 @@ const AppNavigator = ({navigation}) => {
       <Stack.Screen name="PilarDivyaSanchar" component={PilarDivyaSancharScreen} options={{ title: 'Pilar Divya Sanchar'}}/>
       <Stack.Screen name="VauraddeanchoIxtt" component={VauraddeanchoIxttScreen} options={{ title: 'Vauraddeancho Ixtt'}}/>
       <Stack.Screen name="FrAgnelCall" component={FrAgnelCallScreen} options={{ title: 'Fr. Agnels Call'}}/>
+      <Stack.Screen name="DailyScripturesReflections" component={DailyScripturesReflectionsScreen} options={{ title: 'Daily Scriptures And Reflections'}}/>
     </Stack.Navigator>
   );
 }
