@@ -31,7 +31,7 @@ function ListItemYoutube({
   };
   return (
       <TouchableHighlight underlayColor={colors.light} onPress={onPress}>
-          <View>
+          <View style={styles.container}>
             <ImageBackground style={styles.youtubeImage} source={youtubeImageSrc} resizeMode="contain">
                 <Image style={styles.youtubeIcon} source={require('../assets/youtube-icon.png')}></Image>      
             </ImageBackground>
@@ -48,6 +48,9 @@ function ListItemYoutube({
 }
 
 const styles = StyleSheet.create({
+  container:{
+marginHorizontal:15
+  },
 detailsLayout:{
         flex:1,
         flexDirection:'row',

@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     },
    
     dropdownLayout:{
-        width:'40%',
+        width:'35%',
         height:30,
         alignSelf:'flex-end',
         borderColor:colors.black,

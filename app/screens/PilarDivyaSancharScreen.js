@@ -43,8 +43,8 @@ const menuItems = [
     },
   ];
 
-export default class PilarDivyaSancharScreen extends Component {
-  render() {
+export default function PilarDivyaSancharScreen({navigation}) {
+
     return (
       <View style={styles.container}>
        <FlatList
@@ -63,14 +63,13 @@ export default class PilarDivyaSancharScreen extends Component {
                   )}
             />    
       </View>
-    );
+    )
   }
-}
+
 
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        paddingHorizontal:15,
         paddingTop:20
     }
 });
